@@ -1,18 +1,17 @@
 package senacestacaometeorologica.estacaometeorologicaapi.dtos;
 
-import senacestacaometeorologica.estacaometeorologicaapi.model.RadiacaoUv;
 
 public class WeatherDto {
-	private Double temperatura;
+	private Integer temperatura;
 	private Double pressao;
-	private Double umidade;
-	private Double chuva;
-	private RadiacaoUv radUv;
+	private Integer umidade;
+	private String chuva;
+	private String radUv;
 	
-	public Double getTemperatura() {
+	public Integer getTemperatura() {
 		return temperatura;
 	}
-	public void setTemperatura(Double temperatura) {
+	public void setTemperatura(Integer temperatura) {
 		this.temperatura = temperatura;
 	}
 	public Double getPressao() {
@@ -21,23 +20,26 @@ public class WeatherDto {
 	public void setPressao(Double pressao) {
 		this.pressao = pressao;
 	}
-	public Double getUmidade() {
+	public Integer getUmidade() {
 		return umidade;
 	}
-	public void setUmidade(Double umidade) {
+	public void setUmidade(Integer umidade) {
 		this.umidade = umidade;
 	}
-	public Double getChuva() {
+	public String getChuva() {
 		return chuva;
 	}
-	public void setChuva(Double chuva) {
+	public void setChuva(String chuva) {
 		this.chuva = chuva;
 	}
-	public RadiacaoUv getRadUv() {
+	public String getRadUv() {
 		return radUv;
 	}
-	public void setRadUv(RadiacaoUv radUv) {
+	public void setRadUv(String radUv) {
 		this.radUv = radUv;
 	}
+	
+	
+
 	
 }

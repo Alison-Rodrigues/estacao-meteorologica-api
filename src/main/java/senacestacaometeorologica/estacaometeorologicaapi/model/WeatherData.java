@@ -4,8 +4,6 @@ import java.time.LocalDateTime;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -21,24 +19,24 @@ public class WeatherData {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	
-	@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+	@JsonFormat(pattern = "dd-MM-yyyy HH:mm:ss")
 	@Column(name = "data_hora")
 	private LocalDateTime dataHora;
 	
 	@Column
-	private Double temperatura;
+	private Integer temperatura;
 	
 	@Column
 	private Double pressao;
 	
 	@Column
-	private Double umidade;
+	private Integer umidade;
 	
 	@Column
-	private Double chuva;
+	private String chuva;
 	
-	@Enumerated(EnumType.STRING)
-	private RadiacaoUv radUv;
+	@Column(name = "rad_uv")
+	private String radUv;
 	
 	public Integer getId() {
 		return id;
@@ -52,10 +50,10 @@ public class WeatherData {
 	public void setDataHora(LocalDateTime dataHora) {
 		this.dataHora = dataHora;
 	}
-	public Double getTemperatura() {
+	public Integer getTemperatura() {
 		return temperatura;
 	}
-	public void setTemperatura(Double temperatura) {
+	public void setTemperatura(Integer temperatura) {
 		this.temperatura = temperatura;
 	}
 	public Double getPressao() {
@@ -64,22 +62,23 @@ public class WeatherData {
 	public void setPressao(Double pressao) {
 		this.pressao = pressao;
 	}
-	public Double getUmidade() {
+	public Integer getUmidade() {
 		return umidade;
 	}
-	public void setUmidade(Double umidade) {
+	public void setUmidade(Integer umidade) {
 		this.umidade = umidade;
 	}
-	public Double getChuva() {
+	public String getChuva() {
 		return chuva;
 	}
-	public void setChuva(Double chuva) {
+	public void setChuva(String chuva) {
 		this.chuva = chuva;
 	}
-	public RadiacaoUv getRadUv() {
+	public String getRadUv() {
 		return radUv;
 	}
-	public void setRadUv(RadiacaoUv radUv) {
+	public void setRadUv(String radUv) {
 		this.radUv = radUv;
 	}
+	
 }

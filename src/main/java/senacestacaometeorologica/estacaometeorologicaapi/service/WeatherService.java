@@ -19,17 +19,18 @@ public class WeatherService {
 	
 	public void save(WeatherDto weatherDto) {
 		WeatherData weatherData = new WeatherData();
-		Double temperatura = weatherDto.getTemperatura();
+		Integer temperatura = weatherDto.getTemperatura();
 		Double pressao = weatherDto.getPressao();
-		Double umidade = weatherDto.getUmidade();
-		Double chuva = weatherDto.getChuva();
+		Integer umidade = weatherDto.getUmidade();
+		String chuva = weatherDto.getChuva();
+		String radUv = weatherDto.getRadUv();
 		
 		weatherData.setDataHora(LocalDateTime.now());
 		weatherData.setTemperatura(temperatura);
 		weatherData.setPressao(pressao);
 		weatherData.setUmidade(umidade);
 		weatherData.setChuva(chuva);
-		weatherData.setRadUv(weatherDto.getRadUv());
+		weatherData.setRadUv(radUv);
 		
 		weatherRepository.save(weatherData);
 	}
